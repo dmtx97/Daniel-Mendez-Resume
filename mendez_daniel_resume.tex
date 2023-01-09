@@ -1,224 +1,154 @@
+\documentclass[letterpaper,10pt]{article}[leftmargin=*]
 
-
-\documentclass[10pt]{article}
-
+\usepackage[empty]{fullpage}
 \usepackage{enumitem}
-\thispagestyle{empty}
-\topmargin=-1in
-\usepackage[margin=0.5in]{geometry}
-\usepackage{multicol}
-\usepackage{setspace}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
 \usepackage{paracol,lipsum}
 \usepackage{titlesec}
-\usepackage{hyperref}
-\usepackage[x11names]{xcolor}
-\usepackage{setspace}
-\usepackage{paratype}
-\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
-\usepackage[T1]{fontenc}
-\usepackage[none]{hyphenat}
+\usepackage{multicol}
+
+\def \fullname {Daniel Mendez}
+\def \subtitle {}
+
+\def \linkedinicon {\faLinkedinSquare}
+\def \linkedinlink {https://www.linkedin.com/in/dmtx97/}
+\def \linkedintext {/dmtx97}
+
+\def \phoneicon {\faPhone}
+\def \phonetext {+1-214-310-7172}
+
+\def \emailicon {\faEnvelope}
+\def \emaillink {mailto:dmtx97@gmail.com}
+\def \emailtext {dmtx97@gmail.com}
+
+\def \locationicon {\faMapMarker}
+\def \locationtext {Dallas, TX}
+
+\def \entryspacing {-0pt}
+\def \bulletstyle {\faAngleRight}
+
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{0D47A1}
+\definecolor{accent}{HTML}{263238}
+\definecolor{links}{HTML}{1565C0}
+
+\def \linkedin {\linkedinicon \hspace{5pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{5pt}{ \phonetext}}
+\def \email {\emailicon \hspace{5pt}\href{\emaillink}{\emailtext}}
+\def \location {\locationicon \hspace{5pt}{ \locationtext}}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
 \hypersetup{
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=false,     % window fit to page when opened
-    pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={My title},    % title
-    pdfauthor={Author},     % author
-    pdfsubject={Subject},   % subject of the document
-    pdfcreator={Creator},   % creator of the document
-    pdfproducer={Producer}, % producer of the document
-    pdfkeywords={keyword1, key2, key3}, % list of keywords
-    pdfnewwindow=true,      % links in new PDF window
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=blue           % color of external links
+    colorlinks=true,
+    urlcolor=links,
 }
 
-\setcolumnwidth{30pt,30pt}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[.5pt]}]
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesection}{1em}{}
+
+\titlespacing*{\section}{0pt}{.4cm}{.2cm}
+\titlespacing*{\subsection}{0pt}{.1cm}{.1cm}
+
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{30}{40}\selectfont{\color{primary}{{\hspace{.55cm}\textbf{\fullname}}}}
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{2.5em}}l}
+        {#1} & {#3} \\
+        {#2} & {#4}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+\def\headertemplate#1{
+  \begin{tikzpicture}[remember picture,overlay]
+     \fill[white] (current page.north west) rectangle ($(current page.north east)+(0,-1in)$);
+    \node[anchor=north west, minimum size=1in, inner xsep=5mm] at (current page.north west) {#1};
+  \end{tikzpicture}
+  \vspace{1cm}
+}
+
+\def\mainsection#1{
+  \section*{\Large{#1}}
+}
+
+\newcommand\worksection[3]{
+	\subsection*{#1 | #2 {\normalsize\normalfont\hfill {\faCalendar} #3}}
+}
+
+\newcommand\projectsection[5]{
+	\subsection*{#1}
+}
 
 \begin{document}
 
-\begin{center}
-    \large{\huge\textbf{Daniel Mendez}}
-\end{center}
-\begin{center}
-    Dallas, TX {\onehalfspacing} $\cdot$ {\onehalfspacing} \textit{\href{https://mail.google.com/mail/?view=cm&fs=1&to=dmtx97@gmail.com}{\underline{\smash{dmtx97@gmail.com}}}} {\onehalfspacing} $\cdot$ {\onehalfspacing} 214.310.7172 {\onehalfspacing} $\cdot$ {\onehalfspacing} \textit{\href{https://danielmendez.site}{\underline{\smash{danielmendez.site}}}}
-\end{center}
+  \headertemplate{\doublecol{\location}{\phone}{\linkedin}{\email}{}{}}
 
-\section*{Technical Skills}
-\vspace{-.6cm}
-\par\noindent\textcolor{black}{\rule{\textwidth}{.5pt}} 
-\vspace{-.8cm}
-\setcolumnwidth{.50\textwidth,0.50\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{Languages}
-        \begin{flushleft}            
-            C\#, Java, JavaScript, TypeScript, Python, SQL, HTML+CSS, Sass
-        \end{flushleft}
-    \end{leftcolumn}
+  \vspace{-.6cm}
 
-    \begin{rightcolumn} 
-        \subsection*{Frameworks}
-        \begin{flushleft}            
-            ASP.NET Web API, Xamarin, Entity Framework Core, React.js/Next.js, Node.js/Express
-        \end{flushleft}
-    \end{rightcolumn}
-\end{paracol}
-\vspace{-.6cm}
-\subsection*{Tools}
-\begin{flushleft}
-    Microsoft Azure, Microsoft Power Automate, PostgreSQL, MySQL, Docker, Docker-Compose, DigitalOcean, Heroku, Zabbix, git
-\end{flushleft}
+  % WORK EXPERIENCE
+  \mainsection{Work Experience}
+  \worksection{SML RFID}{Software Engineer}{December 2020 - Present}
+  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+    \item{}
+  \end{itemize}
+
+  \worksection{Game Grumps}{Web Developer (Contract)}{May 2022 - September 2022}
+  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+    \item{}
+  \end{itemize}
 
 
-\section*{Education}
-\vspace{-.6cm}
-\par\noindent\textcolor{black}{\rule{\textwidth}{.5pt}} 
-\vspace{-.8cm}
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{Dallas Baptist University}
-        \textbf{August 2016 -  May 2020}
-    \end{leftcolumn}
+  % EDUCATION
+  \mainsection{Education}
+  \subsection*{Dallas Baptist University {\normalsize\normalfont\hfill {\faCalendar} August 2016 - May 2020}}
+  \subsubsection*{\normalfont Bachelors in Science - Computer Science } 
+  Cumulative GPA - 3.62
 
-    \begin{rightcolumn} 
-        \subsection*{Bachelor of Science - Computer Science}
-        Cumulative GPA - 3.62 \\
-        Dean's List - 4 semesters
-    \end{rightcolumn}
-\end{paracol}
+  % Projects
+  \mainsection{Projects}
+  \subsection*{Dallas Mavericks Marketing Research}
+  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+	  \item {}
+  \end{itemize}
 
-\section*{Work Experience}
-\vspace{-.6cm}
-\par\noindent\textcolor{black}{\rule{\textwidth}{.5pt}} 
-\vspace{-.8cm}
-
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{SML RFID}
-        \textbf{December 2020 -  Present} \\
-        Plano, TX
-    \end{leftcolumn}
-
-    \begin{rightcolumn} 
-        \subsection*{Software Engineer}
-        % \vspace{2cm}
-        \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-            \item[$\cdot$] Developed, tested, and debugged features for RFID software.
-        \end{itemize}
-    \end{rightcolumn}
-\end{paracol}
-\vspace{-.2cm}
-
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{Dallas Baptist University}
-        \textbf{March 2017 -  December 2020} \\
-        Information Technology \\
-        Dallas, TX
-    \end{leftcolumn}
-
-    \begin{rightcolumn} 
-        \subsection*{Networks/Systems Administrator}
-        \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-            \item[$\cdot$] Increased web security by ensuring password-less Web App migration to Azure using Managed Service Identity and Key Vault.
-            \item[$\cdot$] Developed robust automated workflows using Microsoft Power Automate for faculty and staff across multiple departments.
-            \item[$\cdot$] Troubleshot network infrastructure to establish fast, stable and secure networks for 4,000+ clients across three campuses. 
-            \item[$\cdot$] Lead development of network automation tools using Python which is actively used on 108 Juniper network switches
-        \end{itemize}
-    \end{rightcolumn}
-\end{paracol}
-\vspace{-.6cm}
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{Four Story Creative}
-        \textbf{January 2020 -  March 2020} \\ 
-        Waxahachie, TX
-    \end{leftcolumn}
-
-    \begin{rightcolumn} 
-        \subsection*{Development Intern}
-        \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-            \item[$\cdot$] Improved user experience to virtual reality simulations by refining swift locomotion and hand interaction.
-            \item[$\cdot$] Expanded software accessibility by porting virtual reality simulation to WebGL.
-        \end{itemize}
-    \end{rightcolumn}
-\end{paracol}
-
-\section*{Projects}
-\vspace{-.6cm}
-\par\noindent\textcolor{black}{\rule{\textwidth}{.5pt}}
-\vspace{-.8cm}
-
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{Aizome (WIP)}
-        \textbf{October 2020 - Present} \\
-        \textit{\href{https://github.com/dmtx97/Aizome}{\underline{GitHub Repository}}}
-    \end{leftcolumn}
-    \begin{rightcolumn} 
-        \vspace{.2cm}
-        \begin{flushleft} 
-            Keeps track of denim collection by recording timeline of events. Developed with ASP.NET Core Web API, Entity Framework Core, Azure Storage for image uploads/retrieval and React.js/Next.js.        \end{flushleft}
-        \vspace{-.6cm}
-        % \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-        %     \item[$\cdot$]  
-        % \end{itemize}
-    \end{rightcolumn}    
-\end{paracol}
-
-% \vspace{-.2cm}
-\setcolumnwidth{.30\textwidth,0.70\textwidth}
-\begin{paracol}{2}
-    \begin{leftcolumn} 
-        \sloppy
-        \subsection*{NetOpsAuto}
-        \textbf{October 2020 - December 2020} \\
-        \textit{\href{https://github.com/dmtx97/netopsauto}{\underline{GitHub Repository}}}
-    \end{leftcolumn}
-    \begin{rightcolumn} 
-        \vspace{.2cm}
-        \begin{flushleft} 
-            Developed a lightweight automation package for Juniper switches using Python. Capable of automating secure access port changes, rescue configurations, SNMP and password changes.
-        \end{flushleft}
-        \vspace{-.4cm}
-    \end{rightcolumn}
-\end{paracol}
-
-% \setcolumnwidth{.30\textwidth,0.70\textwidth}
-% \begin{paracol}{2}
-%     \begin{leftcolumn} 
-%         \sloppy
-%         \subsection*{Budgeting Application}
-%         \textbf{February 2020 - May 2020}
-%     \end{leftcolumn}
-%     \begin{rightcolumn} 
-%         \vspace{.2cm}
-%         \begin{flushleft} 
-%             Tracks manual/bank transactions, lists connected accounts, and displays account balance. Adopts a Microservice architecture developed with Spring Boot, Docker Compose, MySQL, and React.js.
-%         \end{flushleft}
-%         \vspace{-.6cm}
-%         \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-%             \item[$\cdot$]  In charge of front-end architecture, routing, authentication and UI/UX in React.js.
-%         \end{itemize}
-%     \end{rightcolumn}    
-% \end{paracol}
-
-% \vspace{-.4cm}
-
+  % SKILLS
+  \mainsection{Skills}
+  \vspace{-.5cm}
+  \begin{multicols}{3}
+    \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+		\item{}
+    \end{itemize}
+  \end{multicols}
 \end{document}
