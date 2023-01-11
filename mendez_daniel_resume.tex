@@ -23,6 +23,7 @@
 \usepackage{paracol,lipsum}
 \usepackage{titlesec}
 \usepackage{multicol}
+\usepackage[most]{tcolorbox}
 
 \def \fullname {Daniel Mendez}
 \def \subtitle {}
@@ -53,11 +54,11 @@
 \definecolor{accent}{HTML}{263238}
 \definecolor{links}{HTML}{1565C0}
 
-\def \linkedin {\linkedinicon \hspace{5pt}\href{\linkedinlink}{\linkedintext}}
-\def \phone {\phoneicon \hspace{5pt}{ \phonetext}}
-\def \email {\emailicon \hspace{5pt}\href{\emaillink}{\emailtext}}
-\def \location {\locationicon \hspace{5pt}{ \locationtext}}
-\def \github {\githubicon \hspace{5pt}\href{\githublink}{\githubtext}}
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \location {\locationicon \hspace{3pt}{ \locationtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
 % \def \github {\githubicon \hspace{5pt}{ \href{\githublink}\githubtext}}
 
 \addtolength{\oddsidemargin}{-0.55in}
@@ -106,12 +107,14 @@
   \vspace{1cm}
 }
 
+\newtcbox{\mybox}[1][white]{on line, colback=white, box align=base, boxsep=0pt, baseline=2mm, boxrule=0pt, size=fbox, equal height group, halign=center, valign=center, arc=.8mm}
+
 \def\mainsection#1{
   \section*{\Large{#1}}
 }
 
-\newcommand\worksection[3]{
-	\subsection*{#1 | #2 {\normalsize\normalfont\hfill {\faCalendar} \hspace{5pt}#3}}
+\newcommand\worksection[4]{
+	\subsection*{#1 | #2  \hspace{3pt} {\normalsize\normalfont {\faMapMarker} \hspace{3pt}#3} {\normalsize\normalfont \hfill {\faCalendar} \hspace{5pt}#4}}
 }
 
 \newcommand\projectsection[5]{
@@ -126,16 +129,40 @@
 
   % WORK EXPERIENCE
   \mainsection{Work Experience}
-  \worksection{SML RFID}{Software Engineer}{December 2020 - Present}
+  \worksection{SML RFID}{Software Engineer}{Dallas, TX}{December 2020 - Present}
+  \mybox{C\#} \mybox{TypeScript} 
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
     \item{}
   \end{itemize}
 
-  \worksection{Game Grumps}{Web Developer (Contract)}{May 2022 - September 2022}
+  \worksection{Game Grumps}{Web Developer (Contract)}{Remote}{May 2022 - September 2022}
+  \mybox{TypeScript} \mybox{Next.js} \mybox{Tailwind CSS}
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
     \item{}
   \end{itemize}
 
+  \worksection{Dallas Baptist University}{Network/System Administrator}{Dallas, TX}{March 2017 - December 2020}
+  \mybox{Juniper \& Cisco} \mybox{Zabbix} \mybox{Python}
+  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+    \item{Increased web security by ensuring password-less WebApp migration to Azure using Managed Service Identity and Key Vault.}
+    \item{Developed robust automated workflows using Microsoft Power Automate for faculty and staff across multiple departments.}
+    \item{Troubleshot network infrastructure to establish fast, stable, and secure networks for 4,000| clients across three campuses.}
+    \item{Lead development of network automation tools using Python for managing port security, SNMP traps, configuring and reporting.}
+  \end{itemize}
+
+
+  % Projects
+  \mainsection{Projects}
+  \subsection*{}
+  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+	  \item {}
+  \end{itemize}
+
+  % SKILLS
+  \mainsection{Skills}
+  \subsubsection*{Languages: \normalfont{C\#, JavaScript/TypeScript/HTML/CSS, Python, SQL}}
+  \subsubsection*{Frameworks \& Libraries: \normalfont{.NET Core, MAUI, Xamarin, Blazor, Dapper, React.js/Next.js, Express.js, Tailwind CSS}}
+  \subsubsection*{Tools: \normalfont{Git, Linux, Docker, Azure (Blob Storage, Service Bus), Kafka, MySQL, PostgreSQL, Redis }}
 
   % EDUCATION
   \mainsection{Education}
@@ -143,19 +170,5 @@
   \subsubsection*{\normalfont Bachelors in Science - Computer Science } 
   Cumulative GPA - 3.62
 
-  % Projects
-  \mainsection{Projects}
-  \subsection*{Dallas Mavericks Marketing Research}
-  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-	  \item {}
-  \end{itemize}
 
-  % SKILLS
-  \mainsection{Skills}
-  \vspace{-.5cm}
-  \begin{multicols}{3}
-    \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-		\item{}
-    \end{itemize}
-  \end{multicols}
 \end{document}
