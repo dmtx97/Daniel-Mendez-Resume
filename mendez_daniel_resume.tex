@@ -41,6 +41,10 @@
 \def \locationicon {\faMapMarker}
 \def \locationtext {Dallas, TX}
 
+\def \githubicon {\faGithub}
+\def \githublink {https://github.com/dmtx97}
+\def \githubtext {/dmtx97}
+
 \def \entryspacing {-0pt}
 \def \bulletstyle {\faAngleRight}
 
@@ -53,6 +57,8 @@
 \def \phone {\phoneicon \hspace{5pt}{ \phonetext}}
 \def \email {\emailicon \hspace{5pt}\href{\emaillink}{\emailtext}}
 \def \location {\locationicon \hspace{5pt}{ \locationtext}}
+\def \github {\githubicon \hspace{5pt}\href{\githublink}{\githubtext}}
+% \def \github {\githubicon \hspace{5pt}{ \href{\githublink}\githubtext}}
 
 \addtolength{\oddsidemargin}{-0.55in}
 \addtolength{\evensidemargin}{-0.55in}
@@ -84,8 +90,9 @@
       \end{tabular}
     } & {
       \begin{tabular}[c]{l@{\hspace{2.5em}}l}
-        {#1} & {#3} \\
-        {#2} & {#4}
+        {#1} \vspace{.3em} & {#4} \\
+		{#2} \vspace{.3em} & {#5} \\
+		{#3} & {}
       \end{tabular}
     }
   \end{tabularx}
@@ -104,7 +111,7 @@
 }
 
 \newcommand\worksection[3]{
-	\subsection*{#1 | #2 {\normalsize\normalfont\hfill {\faCalendar} #3}}
+	\subsection*{#1 | #2 {\normalsize\normalfont\hfill {\faCalendar} \hspace{5pt}#3}}
 }
 
 \newcommand\projectsection[5]{
@@ -113,7 +120,7 @@
 
 \begin{document}
 
-  \headertemplate{\doublecol{\location}{\phone}{\linkedin}{\email}{}{}}
+\headertemplate{\doublecol{\location}{\phone}{\email}{\linkedin}{\github}{}}
 
   \vspace{-.6cm}
 
@@ -132,7 +139,7 @@
 
   % EDUCATION
   \mainsection{Education}
-  \subsection*{Dallas Baptist University {\normalsize\normalfont\hfill {\faCalendar} August 2016 - May 2020}}
+  \subsection*{Dallas Baptist University {\normalsize\normalfont\hfill {\faCalendar} \hspace{5pt}August 2016 - May 2020}}
   \subsubsection*{\normalfont Bachelors in Science - Computer Science } 
   Cumulative GPA - 3.62
 
