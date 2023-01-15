@@ -114,7 +114,7 @@
 }
 
 \newcommand\worksection[4]{
-	\subsection*{#1 | #2  \hspace{3pt} {\normalsize\normalfont {\faMapMarker} \hspace{3pt}#3} {\normalsize\normalfont \hfill {\faCalendar} \hspace{5pt}#4}}
+	\subsection*{#1 \normalfont| \normalfont#2  {\normalsize\normalfont \hfill {\faMapMarker} \hspace{3pt}#3 \hspace{3pt} {\faCalendar} \hspace{5pt}#4}}
 }
 
 \newcommand\projectsection[5]{
@@ -129,39 +129,47 @@
 
   % WORK EXPERIENCE
   \mainsection{Work Experience}
-  \worksection{SML RFID}{Software Engineer}{Dallas, TX}{December 2020 - Present}
+  \worksection{SML RFID}{Software Engineer}{Dallas, TX}{Dec 2020 - Present}
   \mybox{C\#} \mybox{TypeScript} 
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-    \item{}
+    \item{Developed system wide customer specific ETL integrations using a wide variety of delivery mechanisms such as Azure Service Bus, Kafka and FTP.}
   \end{itemize}
 
-  \worksection{Game Grumps}{Web Developer (Contract)}{Remote}{May 2022 - September 2022}
-  \mybox{TypeScript} \mybox{Next.js} \mybox{Tailwind CSS}
+  \worksection{Game Grumps}{Web Developer (Contract)}{Remote}{May 2022 - Sep 2022}
+  \mybox{TypeScript} \mybox{Tailwind CSS} \mybox{GraphQL}
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-    \item{}
+    \item{Responsible for merch store redesign of a popular YouTube studio migrating from Hydrogen to Next.js.}
+    \item{Utilized Shopify's Admin API to write custom GraphQL queries for product filtering, availability, and sales.}
+    \item{Integrated CMS and Shopify WebHooks for real-time updates of product inventory and custom web components.}
   \end{itemize}
 
-  \worksection{Dallas Baptist University}{Network/System Administrator}{Dallas, TX}{March 2017 - December 2020}
+  \worksection{Dallas Baptist University}{Network/System Administrator}{Dallas, TX}{Mar 2017 - Dec 2020}
   \mybox{Juniper \& Cisco} \mybox{Zabbix} \mybox{Python}
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
     \item{Increased web security by ensuring password-less WebApp migration to Azure using Managed Service Identity and Key Vault.}
     \item{Developed robust automated workflows using Microsoft Power Automate for faculty and staff across multiple departments.}
-    \item{Troubleshot network infrastructure to establish fast, stable, and secure networks for 4,000| clients across three campuses.}
+    \item{Troubleshot network infrastructure to establish fast, stable, and secure networks for 4,000 clients across three campuses.}
     \item{Lead development of network automation tools using Python for managing port security, SNMP traps, configuring and reporting.}
   \end{itemize}
 
 
   % Projects
   \mainsection{Projects}
-  \subsection*{}
+  \subsection*{NetOpsAuto}
   \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-	  \item {}
+	  \item {Lightweight automation package for Juniper network switches developed in Python.}
+	  \item {Capable of automating secure access port changes, SNMP configurations and managing passwords.}
   \end{itemize}
+  % \subsection*{NetOpsAuto}
+  % \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+	 %  \item {Lightweight automation package for Juniper network switches developed in Python.}
+	 %  \item {Capable of automating secure access port changes, SNMP configurations and managing passwords.}
+  % \end{itemize}
 
   % SKILLS
   \mainsection{Skills}
   \subsubsection*{Languages: \normalfont{C\#, JavaScript/TypeScript/HTML/CSS, Python, SQL}}
-  \subsubsection*{Frameworks \& Libraries: \normalfont{.NET Core, MAUI, Xamarin, Blazor, Dapper, React.js/Next.js, Express.js, Tailwind CSS}}
+  \subsubsection*{Frameworks \& Libraries: \normalfont{.NET Core, MAUI, Xamarin, Blazor, Dapper, GraphQL, React.js/Next.js, Express.js, Tailwind CSS}}
   \subsubsection*{Tools: \normalfont{Git, Linux, Docker, Azure (Blob Storage, Service Bus), Kafka, MySQL, PostgreSQL, Redis }}
 
   % EDUCATION
