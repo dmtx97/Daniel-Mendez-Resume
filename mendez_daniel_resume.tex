@@ -25,6 +25,10 @@
 \usepackage{multicol}
 \usepackage[most]{tcolorbox}
 
+\setlist[1]{labelindent=\parindent}
+\setlist[itemize,1]{label=$\bullet$, leftmargin=.32cm, itemsep=1pt}
+\setlist[itemize,2]{label=$\circ$, leftmargin=.34cm, itemsep=1pt}
+
 \def \fullname {Daniel Mendez}
 \def \subtitle {}
 
@@ -46,6 +50,9 @@
 \def \githublink {https://github.com/dmtx97}
 \def \githubtext {/dmtx97}
 
+\def \websitelink {https://danielmendez.site}
+\def \websitetext {danielmendez.site}
+
 \def \entryspacing {-0pt}
 \def \bulletstyle {\faAngleRight}
 
@@ -59,7 +66,7 @@
 \def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \location {\locationicon \hspace{3pt}{ \locationtext}}
 \def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
-% \def \github {\githubicon \hspace{5pt}{ \href{\githublink}\githubtext}}
+\def \website {\href{\websitelink}{\websitetext}}
 
 \addtolength{\oddsidemargin}{-0.55in}
 \addtolength{\evensidemargin}{-0.55in}
@@ -82,12 +89,13 @@
 \titlespacing*{\section}{0pt}{.4cm}{.2cm}
 \titlespacing*{\subsection}{0pt}{.1cm}{.1cm}
 
-% Double column header
+% DOUBLE COLUMN HEADER
 \newcommand{\doublecol}[6]{
   \begin{tabularx}{\textwidth}{Xr}
     {
       \begin{tabular}[c]{l}
         \fontsize{30}{40}\selectfont{\color{primary}{{\hspace{.55cm}\textbf{\fullname}}}}
+		\\ {\hspace{.50cm} \website }
       \end{tabular}
     } & {
       \begin{tabular}[c]{l@{\hspace{2.5em}}l}
@@ -127,17 +135,30 @@
 
   \vspace{-.6cm}
 
+  % SKILLS
+  \mainsection{Skills}
+  \subsubsection*{Languages: \normalfont{C\#, JavaScript/TypeScript/HTML/CSS, Python, SQL}}
+  \subsubsection*{Frameworks \& Libraries: \normalfont{.NET Core, MAUI, Xamarin, Blazor, Dapper, GraphQL, React.js/Next.js, Express.js, Tailwind CSS}}
+  \subsubsection*{Tools: \normalfont{Git, Linux, Docker, Azure (Blob Storage, Service Bus), Kafka, MySQL, PostgreSQL, Redis}}
+
   % WORK EXPERIENCE
   \mainsection{Work Experience}
-  \worksection{SML RFID}{Software Engineer}{Dallas, TX}{Dec 2020 - Present}
+  \worksection{SML RFID}{Software Engineer II}{Dallas, TX}{Dec 2020 - Present}
   \mybox{C\#} \mybox{TypeScript} 
-  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+  \begin{itemize}
     \item{Developed system wide customer specific ETL integrations using a wide variety of delivery mechanisms such as Azure Service Bus, Kafka and FTP.}
+	\item{In a small team, designed, developed, and deployed a new suite of tools for companies Supply Chain offering with the following projects:}
+	  \begin{itemize}
+		  \item{New backend using Dapr Microservice Runtime, SignalR, and PostgreSQL, for ease of development and ability to distribute integration events across multiple services allowing the handling of unique business logic for specific customers.}
+		  \item{Web dashboard responsible for displaying real-time container audits and scans, metrics, device health and reporting using Next.js and Tailwind CSS.}
+		  \item{.NET MAUI and Xamarin native applications for container scans and audits integrated with RFID hardware.}
+	  \end{itemize}
+    % \item{Involved in the onboarding and training of new developers.}
   \end{itemize}
 
   \worksection{Game Grumps}{Web Developer (Contract)}{Remote}{May 2022 - Sep 2022}
   \mybox{TypeScript} \mybox{Tailwind CSS} \mybox{GraphQL}
-  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+  \begin{itemize}
     \item{Responsible for merch store redesign of a popular YouTube studio migrating from Hydrogen to Next.js.}
     \item{Utilized Shopify's Admin API to write custom GraphQL queries for product filtering, availability, and sales.}
     \item{Integrated CMS and Shopify WebHooks for real-time updates of product inventory and custom web components.}
@@ -145,38 +166,29 @@
 
   \worksection{Dallas Baptist University}{Network/System Administrator}{Dallas, TX}{Mar 2017 - Dec 2020}
   \mybox{Juniper \& Cisco} \mybox{Zabbix} \mybox{Python}
-  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
+  \begin{itemize}
     \item{Increased web security by ensuring password-less WebApp migration to Azure using Managed Service Identity and Key Vault.}
-    \item{Developed robust automated workflows using Microsoft Power Automate for faculty and staff across multiple departments.}
+    % \item{Developed robust automated workflows using Microsoft Power Automate for faculty and staff across multiple departments.}
     \item{Troubleshot network infrastructure to establish fast, stable, and secure networks for 4,000 clients across three campuses.}
     \item{Lead development of network automation tools using Python for managing port security, SNMP traps, configuring and reporting.}
   \end{itemize}
 
-
-  % Projects
+  % PROJECTS
   \mainsection{Projects}
   \subsection*{NetOpsAuto}
-  \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-	  \item {Lightweight automation package for Juniper network switches developed in Python.}
-	  \item {Capable of automating secure access port changes, SNMP configurations and managing passwords.}
+  \begin{itemize}
+	  \item {Lightweight automation package for Juniper network switches developed in Python. Capable of automating secure access port changes, SNMP configurations and managing passwords.}
   \end{itemize}
-  % \subsection*{NetOpsAuto}
-  % \begin{itemize}[leftmargin=.28cm, itemsep=1pt]
-	 %  \item {Lightweight automation package for Juniper network switches developed in Python.}
-	 %  \item {Capable of automating secure access port changes, SNMP configurations and managing passwords.}
-  % \end{itemize}
 
-  % SKILLS
-  \mainsection{Skills}
-  \subsubsection*{Languages: \normalfont{C\#, JavaScript/TypeScript/HTML/CSS, Python, SQL}}
-  \subsubsection*{Frameworks \& Libraries: \normalfont{.NET Core, MAUI, Xamarin, Blazor, Dapper, GraphQL, React.js/Next.js, Express.js, Tailwind CSS}}
-  \subsubsection*{Tools: \normalfont{Git, Linux, Docker, Azure (Blob Storage, Service Bus), Kafka, MySQL, PostgreSQL, Redis }}
+  \subsection*{Aizome}
+  \begin{itemize}
+	  \item {WebApp used to keep track of raw denim collections by recording a timeline of events. Developed in ASP.NET Core, Entity Framework, Azure Storage, and Next.js.}
+  \end{itemize}
+
 
   % EDUCATION
   \mainsection{Education}
   \subsection*{Dallas Baptist University {\normalsize\normalfont\hfill {\faCalendar} \hspace{5pt}August 2016 - May 2020}}
   \subsubsection*{\normalfont Bachelors in Science - Computer Science } 
   Cumulative GPA - 3.62
-
-
 \end{document}

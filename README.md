@@ -1,3 +1,3 @@
-# Daniel Mendez Resume Winter 2021
+# Daniel Mendez Resume Winter 2023
 
 Resume made with LaTex
