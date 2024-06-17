@@ -1,0 +1,46 @@
+\documentclass[10pt,english]{article}
+\pagenumbering{gobble} % turn off page numbering
+
+% Packages
+\usepackage[a4paper,margin=0.5in]{geometry}
+\usepackage{import}
+\usepackage{ifxetex}
+\usepackage[inline]{enumitem}
+\usepackage{xcolor}
+% \usepackage[none]{hyphenat}
+\usepackage{censor}
+
+% Figure out which font package to load depending on the compiler
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome5}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=links
+}
+
+\import{./}{commands.tex}
+\begin{document}
+	 % Header
+	\input{src/header.tex}
+
+	% Work Experience
+	\input{src/experience.tex}
+
+	% Projects
+	\input{src/projects.tex}
+
+	% Skills
+	\input{src/skills.tex}
+
+	% Education
+	\input{src/education.tex}
+
+\end{document}

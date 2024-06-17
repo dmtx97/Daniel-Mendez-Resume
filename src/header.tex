@@ -1,0 +1,47 @@
+% Header links
+\newlist{headerlinks}{enumerate*}{1}
+\setlist[headerlinks]{itemjoin=\hspace{.5cm}, label={}}
+
+% Location
+\def \locationIcon {\faMapMarker*}
+\def \locationText {Dallas, TX}
+\def \location {\locationIcon \hspace{5pt}\locationText}
+
+% Phone
+\def \phoneIcon {\faPhone*}
+\def \phoneText {123-456-7891}
+% \def \phoneText {\censor{123-456-7891}}
+\def \phone {\phoneIcon \hspace{5pt}\phoneText}
+
+% Email
+\def \emailIcon {\faEnvelope}
+\def \emailText {dmtx97@gmail.com}
+\def \emailLink {mailto:dmtx97@gmail.com}
+\def \email {\emailIcon \hspace{5pt}\href{\emailLink}{\emailText}}
+
+% GitHub
+\def \githubIcon {\faGithub}
+\def \githubText {github.com/dmtx97}
+\def \githubLink {https://github.com/dmtx97}
+\def \github {\githubIcon \hspace{5pt}\href{\githubLink}{\githubText}}
+
+% LinkedIn
+\def \linkedinIcon {\faLinkedin}
+\def \linkedinLink {https://www.linkedin.com/in/dmtx97/}
+\def \linkedinText {linkedin.com/in/dmtx97}
+\def \linkedin {\linkedinIcon \hspace{5pt}\href{\linkedinLink}{\linkedinText}}
+
+\def \name {Daniel Mendez}
+
+\begin{center}
+	\section*{\huge{\name}}
+
+	\begin{headerlinks}
+		\item \location
+		\item \phone
+		\item \email
+		\item \github
+		\item \linkedin
+	\end{headerlinks}
+\end{center}
+
