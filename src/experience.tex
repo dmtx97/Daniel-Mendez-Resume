@@ -1,47 +1,51 @@
-
 \newcommand\jobtitle[2]{
-	\subsubsection*{\normalfont#1\hfill\normalfont#2}
+	\subsubsection*{\textbf#1\hfill\normalfont#2}
 }
 
-\newcommand\position[4]{
-	\subsection*{#1}
-	\jobtitle{#2}{#3}
-	#4
+\newcommand\position[5]{
+	\subsubsection*{#1\hfill#2}
+	\jobtitle{#3}{#4}
+	#5
 	\vspace{-0.25cm}
 }
 
 \mainsection{Work Experience}
 
-% Current position achievements are ongoing due to me just getting promoted :)
-\position{SML RFID}{Senior Software Engineer}{April 2024 - Present}{
+\position{Clarity RFID}{Plano, TX}{Senior Software Engineer}{April 2024 - Present}{
+	\begin{itemize}
+		\item Served as the web component lead, providing mentorship and architectural insight for our web presence while leading the code review process.
+		\item Designed and implemented a high-precision item-tracking system using Geographic Information Systems (GIS) to map read locations, directly improving loss prevention and inventory analytics.
+		\item Key contributor to an architectural rewrite of our core mobile applications from Xamarin to .NET MAUI, greatly improving cross-platform performance and maintainability.
+	\end{itemize}
+
 	\jobtitle{Software Engineer II}{April 2022 - April 2024}
 	\begin{itemize}
-		\item Led development of enterprise and store-specific web dashboards for major retailers, capturing real-time metrics and reports using TypeScript, TailwindCSS, Next.js, and SvelteKit.
-		\item Key contributor to all new retail supply chain microservices built with Dapr, C\#, .NET, PostgreSQL, Docker, and Kubernetes.
-		\item Engineered scalable system-wide ETL integrations using Azure Service Bus, Azure Blob Storage, Kafka, and FTP.
+		\item Led the development of enterprise and site-specific web applications for major retailers, capturing real-time metrics and reports using TypeScript, TailwindCSS, Next.js, and SvelteKit.
+		\item Developed retail supply chain microservices using .NET Aspire, C\#, PostgreSQL, Docker, and Kubernetes.
+		\item Engineered scalable, system-wide ETL integrations leveraging Azure Service Bus, Azure Blob Storage, Kafka, and FTP.
 	\end{itemize}
 
 	\jobtitle{Software Engineer}{December 2020 - April 2022}
 	\begin{itemize}
-		\item Designed and implemented proprietary and customer-specific APIs and scheduled background jobs to enable item-level tagging features, leveraging C\#, SQL Server, and Redis.
-		\item In a small team, significantly contributed to the development of native mobile apps using Xamarin and .NET MAUI, integrated with RFID hardware for real-time inventory management.
+		\item Designed and implemented proprietary RESTful APIs and automated background jobs using C\#, SQL Server, and Redis to enable item-level tagging features.
+		\item Developed native mobile apps built with Xamarin Forms integrated with RFID hardware, enhancing real-time inventory management.
 	\end{itemize}
 }
 
-\position{Game Grumps, Contract}{Web Developer}{May 2022 - Sep 2022}{
+\position{Game Grumps, Contract}{Remote}{Web Developer}{May 2022 - Sep 2022}{
 	\begin{itemize}
 		\item Redesigned a popular YouTube studio’s merchandise store by migrating from Shopify Hydrogen to Next.js, improving site performance, search engine optimization (SEO), and user experience.
-		\item Developed and integrated a content management system (CMS) for real-time and scheduled product inventory/web component updates, boosting content management efficiency for site maintainers.
-		\item Built Shopify Admin API/GraphQL integrations for real-time product tracking and filtering, improving customer visibility into inventory.
 		\item Drove \$800K+ in merchandise revenue by end of 2022 through enhanced site functionality, discoverability, and user experience.
+		\item Built custom content management systems (CMS) for automatic product inventory updates, boosting efficiency for site maintainers.
+		\item Developed robust Shopify Admin API and GraphQL integrations to enable real-time product tracking and filtering.
 	\end{itemize}
 }
 
-\position{Dallas Baptist University}{Network/System Administrator}{Mar 2017 - Dec 2020}{
+\position{Dallas Baptist University}{Dallas, TX}{Network \& System Administrator}{Mar 2017 - Dec 2020}{
 	\begin{itemize}
-		\item Built an open-source Python tool to automate network tasks (port security, SNMP, configuration) and generate reports.
-		\item Deployed and maintained network infrastructure across 3 campuses, ensuring high-speed, stable, and secure connectivity for 4,000+ users.
-		\item Migrated web apps to Azure’s passwordless authentication using Managed Service Identity (MSI) and Azure Key Vault, enhancing security.
+		\item Developed an open-source network automation tool in Python to assist in port security, SNMP, configuration, and report generation.
+		\item Deployed and managed network infrastructure for 4,000+ users across three campuses, maintaining high network speed and stable/secure network connectivity.
+		\item Enhanced web application security by migrating to Azure’s password-less authentication using Managed Service Identity (MSI) and Azure Key Vault.
 	\end{itemize}
 }
 
