@@ -1,3 +1,3 @@
-# Daniel Mendez Resume Summer 2024
+# Daniel Mendez Resume Sprint 2026
 
 Resume made with LaTex
